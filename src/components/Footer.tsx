@@ -84,6 +84,17 @@ export default function Footer() {
         {/* Bottom */}
         <div className="text-center py-6 text-sm text-white/30">
           <p>&copy; {new Date().getFullYear()} {SITE.name}. All rights reserved.</p>
+          <p className="mt-1">
+            Website designed by{" "}
+            <a
+              href="https://dfd.llc"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/40 hover:text-gold-light transition-colors"
+            >
+              Digital Front Door
+            </a>
+          </p>
         </div>
       </div>
     </footer>
