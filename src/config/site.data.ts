@@ -13,7 +13,7 @@ export const SITE_DATA = {
     "The Schäffler is a wedding and event venue in Frankenmuth, Michigan — a new chapter for the gathering place long known as Sullivan's Black Forest. Explore the space, discover its story, and request a private tour for your celebration.",
   shortDescription:
     "A wedding and event venue in Frankenmuth, Michigan, formerly known as Sullivan's Black Forest.",
-  url: "https://schaffler-frankenmuth.elijahdesent.com",
+  url: "https://theschaffler.com",
 
   // What this venue was known as for years before reopening under this name.
   formerName: "Sullivan's Black Forest",
