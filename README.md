@@ -32,7 +32,8 @@ npm start       # serve the build
   search results, and a tracking snippet in `src/app/layout.tsx` reports
   demo views back to the CRM. Both should be removed if this site goes live
   on its own domain.
-- The reservation form on `/reserve` is a front-end demo only; it is not yet
-  wired to send email or texts.
-- Gallery imagery is a design placeholder until real venue photos are
-  supplied and uploaded.
+- `/reserve` routes visitors to the venue's public phone number and Facebook
+  page while the venue chooses a permanent inquiry inbox.
+- Gallery imagery uses the venue's current Facebook introduction and a credited
+  historic Sullivan's Black Forest image. Expand it when the owner supplies a
+  complete current photo library.

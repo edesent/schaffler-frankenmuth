@@ -1,42 +1,47 @@
 import AnimateOnScroll from "./AnimateOnScroll";
 import { SITE } from "@/config/site";
+import Image from "next/image";
 
 const tiles = [
-  { caption: "The Reception Hall", tone: "from-brown-light to-brown-deep" },
-  { caption: "Ceremony Setup", tone: "from-gold to-brown-light" },
-  { caption: "Evening String Lights", tone: "from-burgundy to-brown-deep" },
-  { caption: "Historic Charm", tone: "from-sage to-brown-deep" },
-  { caption: "Table & Decor", tone: "from-gold-dark to-brown" },
-  { caption: "Little Bavaria Grounds", tone: "from-burgundy-dark to-brown-deep" },
+  { caption: "Timber & Draping", src: "/venue/legacy-reception-hall.jpg", position: "center", className: "md:col-span-2 md:row-span-2" },
+  { caption: "Reception Layout", src: "/venue/facebook-banquet-room.jpg", position: "center", className: "" },
+  { caption: "Warm String Lights", src: "/venue/facebook-banquet-room.jpg", position: "center 24%", className: "" },
+  { caption: "The Grand Trusses", src: "/venue/legacy-reception-hall.jpg", position: "center 8%", className: "" },
+  { caption: "A Room Ready to Transform", src: "/venue/legacy-reception-hall.jpg", position: "center 72%", className: "md:col-span-2" },
 ];
 
 export default function PhotoGallery() {
   return (
-    <section id="gallery" className="py-28 bg-cream">
+    <section id="gallery" className="py-28 lg:py-36 bg-[#1d1612] text-white">
       <div className="max-w-7xl mx-auto px-6">
         <AnimateOnScroll>
           <div className="text-center mb-10">
-            <span className="inline-block text-xs font-bold tracking-[0.25em] uppercase text-gold-dark mb-3">
-              Gallery
-            </span>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-text-dark leading-snug">
-              A Glimpse of <em className="text-brown-light italic">The Schäffler</em>
+            <p className="eyebrow text-gold-light">Inside The Schäffler</p>
+            <h2 className="section-title text-white">
+              A room with <em className="text-gold-light">presence.</em>
             </h2>
-            <p className="text-text-body mt-3 max-w-2xl mx-auto">
-              This demo site is standing in with design placeholders until
-              real venue photos are added. See current photos of the space on
-              our Facebook page.
+            <p className="text-white/65 mt-4 max-w-2xl mx-auto leading-relaxed">
+              Real views of the venue as it begins its next chapter—from the current
+              Facebook introduction and the hall&rsquo;s Sullivan&rsquo;s Black Forest history.
             </p>
           </div>
         </AnimateOnScroll>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 auto-rows-[240px] gap-3 md:gap-4">
           {tiles.map((p, i) => (
-            <AnimateOnScroll key={p.caption} delay={i * 60}>
+            <AnimateOnScroll key={p.caption} delay={i * 60} className={p.className}>
               <figure
-                className={`relative aspect-[4/3] rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all bg-gradient-to-br ${p.tone}`}
+                className="group relative h-full rounded-2xl overflow-hidden shadow-sm bg-brown-deep"
               >
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.18),transparent_60%)]" />
+                <Image
+                  src={p.src}
+                  alt={`${p.caption} at The Schäffler in Frankenmuth`}
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  style={{ objectPosition: p.position }}
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/5 to-transparent" />
                 <figcaption className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent text-white">
                   <p className="text-xs font-semibold tracking-[0.2em] uppercase text-gold-light/90">
                     {p.caption}
@@ -56,7 +61,7 @@ export default function PhotoGallery() {
                 rel="noopener noreferrer"
                 className="inline-block border-2 border-brown-light text-brown-light font-semibold text-sm tracking-wide uppercase px-8 py-3.5 rounded-full hover:bg-brown-light hover:text-white hover:-translate-y-0.5 transition-all"
               >
-                See Real Photos on Facebook
+                Follow the Venue on Facebook
               </a>
             </div>
           </AnimateOnScroll>

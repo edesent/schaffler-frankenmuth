@@ -15,7 +15,7 @@ const hours = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1a1a2e] text-white/70 pt-20">
+    <footer className="bg-[#17100c] text-white/70 pt-20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-white/[.08]">
           {/* Brand */}

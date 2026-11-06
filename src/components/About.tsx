@@ -1,50 +1,72 @@
 import AnimateOnScroll from "./AnimateOnScroll";
 import { SITE } from "@/config/site";
+import Image from "next/image";
 
 export default function About() {
   return (
-    <section id="about" className="py-28 bg-cream">
-      <div className="max-w-5xl mx-auto px-6">
-        <AnimateOnScroll>
-          <div className="text-center mb-14">
-            <span className="inline-block text-xs font-bold tracking-[0.25em] uppercase text-gold-dark mb-3">
-              Our Story
-            </span>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-text-dark leading-snug">
-              A Frankenmuth Landmark, <em className="text-brown-light italic">Reintroduced</em>
-            </h2>
-          </div>
-        </AnimateOnScroll>
+    <section id="about" className="relative py-28 lg:py-36 bg-cream overflow-hidden">
+      <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full border border-gold/20" />
+      <div className="absolute -top-4 -right-4 w-64 h-64 rounded-full border border-gold/15" />
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid lg:grid-cols-[.9fr_1.1fr] gap-14 lg:gap-24 items-center">
+          <AnimateOnScroll>
+            <div className="relative max-w-xl mx-auto lg:mx-0">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-2xl">
+                <Image
+                  src="/venue/facebook-banquet-room.jpg"
+                  alt="The Schäffler banquet room with warm timber beams and string lights"
+                  fill
+                  sizes="(min-width: 1024px) 42vw, 90vw"
+                  className="object-cover scale-110"
+                />
+              </div>
+              <div className="absolute -bottom-8 -right-4 sm:-right-10 max-w-[250px] bg-burgundy text-white p-6 rounded-2xl shadow-xl">
+                <p className="font-serif italic text-xl leading-snug">A familiar place, ready for new memories.</p>
+              </div>
+              <div className="absolute -top-5 -left-5 w-24 h-24 border border-gold rounded-full flex items-center justify-center bg-cream shadow-sm">
+                <span className="font-serif italic text-4xl text-gold-dark">S</span>
+              </div>
+            </div>
+          </AnimateOnScroll>
 
-        <AnimateOnScroll delay={150}>
-          <blockquote className="relative p-8 md:p-12 bg-warm-white rounded-2xl border border-cream-dark shadow-sm mb-10">
-            <span className="absolute -top-5 left-8 text-6xl font-serif text-gold/40 select-none">&ldquo;</span>
-            <p className="font-serif italic text-xl md:text-2xl text-text-dark leading-relaxed">
-              We are excited to reintroduce {SITE.formerName} as {SITE.name}. For years
-              this venue served as the backdrop for unforgettable&nbsp;celebrations&hellip;
-            </p>
-            <p className="text-sm text-text-light mt-5 not-italic">
-              — from The Schäffler&rsquo;s Facebook page
-            </p>
-          </blockquote>
-        </AnimateOnScroll>
+          <div>
+            <AnimateOnScroll delay={100}>
+              <p className="eyebrow">Our Story</p>
+              <h2 className="section-title max-w-2xl">
+                A Frankenmuth gathering place begins its <em>next chapter.</em>
+              </h2>
+            </AnimateOnScroll>
 
-        <AnimateOnScroll delay={250}>
-          <div className="grid md:grid-cols-2 gap-10 text-text-body leading-relaxed">
-            <p>
-              For years, this address on Heinlein Strasse was known to the
-              Frankenmuth community as {SITE.formerName} — the setting for
-              countless wedding days, receptions, and family celebrations.
-              That history is still very much part of this building.
-            </p>
-            <p>
-              Today the venue continues under a new name, {SITE.name}, with a
-              renewed focus on hosting weddings and private events in
-              Michigan&rsquo;s Little Bavaria. We&rsquo;d love to show you
-              around and talk through what your day could look like here.
-            </p>
+            <AnimateOnScroll delay={180}>
+              <blockquote className="my-9 pl-7 border-l-2 border-gold">
+                <p className="font-serif italic text-xl md:text-2xl text-text-dark leading-relaxed">
+                  “We are excited to reintroduce {SITE.formerName} as {SITE.name}.
+                  For years this venue served as the backdrop for unforgettable celebrations…”
+                </p>
+                <cite className="block mt-4 text-[11px] font-bold not-italic tracking-[0.18em] uppercase text-gold-dark">
+                  The Schäffler · Facebook introduction
+                </cite>
+              </blockquote>
+            </AnimateOnScroll>
+
+            <AnimateOnScroll delay={240}>
+              <div className="space-y-5 text-[17px] text-text-body leading-8">
+                <p>
+                  Generations of guests knew this Heinlein Strasse address as
+                  {" "}{SITE.formerName}: a place where wedding parties gathered,
+                  families celebrated, and evenings unfolded beneath warm wood beams.
+                </p>
+                <p>
+                  {SITE.name} honors that history while giving the venue a fresh identity.
+                  The character remains unmistakable—the soaring timber structure,
+                  layered reception room, soft lighting, and a setting rooted in
+                  Frankenmuth&rsquo;s tradition of welcoming people well.
+                </p>
+              </div>
+              <a href="/reserve" className="text-link mt-8">Plan a walk-through <span>→</span></a>
+            </AnimateOnScroll>
           </div>
-        </AnimateOnScroll>
+        </div>
       </div>
     </section>
   );

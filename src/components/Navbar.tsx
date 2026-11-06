@@ -2,12 +2,13 @@
 
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { brandInitials, brandTop, brandBottom } from "@/config/site";
+import { brandInitials } from "@/config/site";
 
 const navLinks = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "Our Story" },
   { href: "#spaces", label: "The Venue" },
+  { href: "#events", label: "Events" },
   { href: "/gallery", label: "Gallery" },
   { href: "#contact", label: "Contact" },
 ];
@@ -57,16 +58,12 @@ export default function Navbar() {
           onClick={(e) => handleLinkClick(e, "#home")}
           className="flex items-center gap-3 text-white"
         >
-          <div className="w-9 h-9 rounded-full bg-gold flex items-center justify-center text-brown-deep font-bold font-serif text-base shadow-sm">
+          <div className="w-10 h-10 rounded-full border border-gold/70 flex items-center justify-center text-gold-light font-bold font-serif text-sm shadow-sm">
             {brandInitials}
           </div>
-          <div className="flex flex-col leading-tight">
-            <span className="text-sm sm:text-base font-semibold tracking-[0.18em] uppercase text-gold whitespace-nowrap">
-              {brandTop}
-            </span>
-            <span className="text-[10px] sm:text-xs tracking-[0.25em] uppercase text-white/60 whitespace-nowrap">
-              {brandBottom}
-            </span>
+          <div className="flex items-baseline gap-1 leading-tight whitespace-nowrap">
+            <span className="text-[11px] tracking-[0.24em] uppercase text-white/70">The</span>
+            <span className="font-serif italic text-xl sm:text-2xl text-gold-light">Schäffler</span>
           </div>
         </a>
 
@@ -77,7 +74,7 @@ export default function Navbar() {
               <a
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
-                className="text-white/85 text-sm font-medium px-3 py-2 rounded-md hover:text-white hover:bg-white/10 transition-all"
+                className="text-white/78 text-xs font-bold tracking-[.08em] uppercase px-3 py-2 rounded-md hover:text-gold-light transition-all"
               >
                 {link.label}
               </a>
@@ -86,7 +83,7 @@ export default function Navbar() {
           <li className="ml-2">
             <a
               href="/reserve"
-              className="bg-gold text-brown-deep text-sm font-semibold px-6 py-2.5 rounded-full hover:bg-gold-light hover:-translate-y-0.5 transition-all"
+              className="bg-gold text-brown-deep text-[11px] font-bold tracking-[.1em] uppercase px-6 py-3 rounded-full hover:bg-gold-light hover:-translate-y-0.5 transition-all"
             >
               Check Availability
             </a>

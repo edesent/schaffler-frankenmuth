@@ -1,132 +1,70 @@
-"use client";
-
-import { useState } from "react";
 import AnimateOnScroll from "./AnimateOnScroll";
 import { SITE, phoneTel } from "@/config/site";
 
+const ready = [
+  "Your preferred date or season",
+  "An estimated guest count",
+  "Ceremony, reception, or both",
+  "The atmosphere you want to create",
+  "Any questions about vendors or setup",
+];
+
 export default function ReserveForm() {
-  const [submitted, setSubmitted] = useState(false);
-
   return (
-    <section className="py-28 bg-cream">
-      <div className="max-w-3xl mx-auto px-6">
-        <AnimateOnScroll>
-          <div className="text-center mb-10">
-            <span className="inline-block text-xs font-bold tracking-[0.25em] uppercase text-gold-dark mb-3">
-              Reserve Your Date
-            </span>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-text-dark leading-snug">
-              Request Pricing &amp; <em className="text-brown-light italic">Check Availability</em>
-            </h2>
-            <p className="text-text-body mt-3">
-              Every wedding is different, so we don&rsquo;t post flat pricing —
-              tell us a bit about your day and we&rsquo;ll follow up with
-              availability and pricing for your date.
-            </p>
-          </div>
-        </AnimateOnScroll>
+    <section className="py-28 lg:py-36 bg-cream">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid lg:grid-cols-[1.05fr_.95fr] gap-12 lg:gap-20 items-start">
+          <AnimateOnScroll>
+            <div>
+              <p className="eyebrow">Begin the Conversation</p>
+              <h2 className="section-title">Your date deserves a <em>closer look.</em></h2>
+              <p className="mt-7 text-lg text-text-body leading-8 max-w-2xl">
+                A private walk-through is the best way to experience the scale,
+                warmth, and possibilities of The Schäffler. Call or message the
+                venue to ask about available tour times and current pricing.
+              </p>
 
-        <AnimateOnScroll delay={150}>
-          {submitted ? (
-            <div className="p-10 bg-warm-white rounded-2xl border border-cream-dark text-center">
-              <svg className="w-14 h-14 mx-auto mb-4 text-gold-dark" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-              </svg>
-              <h3 className="font-serif text-2xl font-bold text-text-dark mb-2">
-                Thank you — request received.
-              </h3>
-              <p className="text-text-body">
-                We&rsquo;ll be in touch about availability and pricing for
-                your date. In the meantime, feel free to call{" "}
-                <a href={`tel:${phoneTel}`} className="text-brown-light font-semibold hover:underline">
-                  {SITE.phone}
-                </a>.
+              <div className="grid sm:grid-cols-2 gap-4 mt-10">
+                <a href={`tel:${phoneTel}`} className="group p-6 rounded-2xl bg-brown-deep text-white hover:bg-burgundy transition-colors">
+                  <span className="block text-[10px] font-bold tracking-[.2em] uppercase text-gold-light mb-3">Call the venue</span>
+                  <span className="font-serif text-2xl">{SITE.phone}</span>
+                  <span className="block text-sm text-white/60 mt-2">Tap to call now →</span>
+                </a>
+                <a href={SITE.facebookUrl} target="_blank" rel="noopener noreferrer" className="group p-6 rounded-2xl bg-warm-white border border-cream-dark text-text-dark hover:border-gold transition-colors">
+                  <span className="block text-[10px] font-bold tracking-[.2em] uppercase text-gold-dark mb-3">Message online</span>
+                  <span className="font-serif text-2xl">Facebook</span>
+                  <span className="block text-sm text-text-light mt-2">Open The Schäffler’s page →</span>
+                </a>
+              </div>
+
+              <p className="mt-6 text-sm text-text-light">
+                Tours are arranged directly with the venue. Availability, packages,
+                and event details should be confirmed for your specific date.
               </p>
             </div>
-          ) : (
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                setSubmitted(true);
-              }}
-              className="p-8 md:p-10 bg-warm-white rounded-2xl border border-cream-dark space-y-5"
-            >
-              <div className="grid sm:grid-cols-2 gap-5">
-                <div>
-                  <label className="block text-xs font-bold tracking-[0.15em] uppercase text-text-light mb-2">
-                    Your Name
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="Jane & John Doe"
-                    className="w-full px-4 py-3 rounded-lg bg-cream border border-cream-dark text-text-dark placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-bold tracking-[0.15em] uppercase text-text-light mb-2">
-                    Phone or Email
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="How should we reach you?"
-                    className="w-full px-4 py-3 rounded-lg bg-cream border border-cream-dark text-text-dark placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all"
-                  />
-                </div>
+          </AnimateOnScroll>
+
+          <AnimateOnScroll delay={160}>
+            <aside className="relative bg-warm-white rounded-[2rem] p-8 md:p-10 border border-cream-dark shadow-sm overflow-hidden">
+              <div className="absolute top-0 right-0 w-36 h-36 rounded-bl-full bg-gold/10" />
+              <p className="relative text-[10px] font-bold tracking-[.22em] uppercase text-gold-dark mb-4">Before you reach out</p>
+              <h3 className="relative font-serif text-3xl text-text-dark mb-7">Have these details handy</h3>
+              <ul className="relative space-y-4">
+                {ready.map((item, index) => (
+                  <li key={item} className="flex items-center gap-4 text-text-body">
+                    <span className="w-8 h-8 rounded-full bg-cream flex items-center justify-center text-xs font-bold text-gold-dark">{index + 1}</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="relative mt-9 pt-7 border-t border-cream-dark">
+                <p className="font-serif italic text-xl text-text-dark">
+                  “A familiar place, ready for new memories.”
+                </p>
               </div>
-
-              <div className="grid sm:grid-cols-2 gap-5">
-                <div>
-                  <label className="block text-xs font-bold tracking-[0.15em] uppercase text-text-light mb-2">
-                    Preferred Date
-                  </label>
-                  <input
-                    type="date"
-                    className="w-full px-4 py-3 rounded-lg bg-cream border border-cream-dark text-text-dark focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-bold tracking-[0.15em] uppercase text-text-light mb-2">
-                    Approx. Guest Count
-                  </label>
-                  <input
-                    type="number"
-                    min={0}
-                    placeholder="e.g. 150"
-                    className="w-full px-4 py-3 rounded-lg bg-cream border border-cream-dark text-text-dark placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold tracking-[0.15em] uppercase text-text-light mb-2">
-                  Tell Us About Your Day
-                </label>
-                <textarea
-                  rows={4}
-                  placeholder="Ceremony and reception, just a reception, type of event, anything else we should know..."
-                  className="w-full px-4 py-3 rounded-lg bg-cream border border-cream-dark text-text-dark placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all resize-none"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-gold text-brown-deep font-semibold text-sm tracking-wide uppercase px-8 py-4 rounded-full hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-lg transition-all"
-              >
-                Request Pricing &amp; Availability
-              </button>
-
-              <p className="text-xs text-text-muted text-center pt-1">
-                This demo form is not yet connected to send messages. Prefer
-                to talk now? Call{" "}
-                <a href={`tel:${phoneTel}`} className="text-brown-light hover:underline">
-                  {SITE.phone}
-                </a>.
-              </p>
-            </form>
-          )}
-        </AnimateOnScroll>
+            </aside>
+          </AnimateOnScroll>
+        </div>
       </div>
     </section>
   );

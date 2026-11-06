@@ -46,4 +46,4 @@ export const mapsUrl = `https://maps.google.com/?q=${encodeURIComponent(addressO
 export const mapsEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(addressOneLine)}&output=embed`;
 
 export const logoUrl = `${SITE.url.replace(/\/$/, "")}/logo.png`;
-export const ogImageUrl = "/og-image.jpg";
+export const ogImageUrl = "/venue/legacy-reception-hall.jpg";

@@ -3,6 +3,9 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Spaces from "@/components/Spaces";
 import PhotoGallery from "@/components/PhotoGallery";
+import Events from "@/components/Events";
+import Planning from "@/components/Planning";
+import FAQ from "@/components/FAQ";
 import MapAddress from "@/components/MapAddress";
 import Footer from "@/components/Footer";
 import { SITE, logoUrl, ogImageUrl, phoneTel } from "@/config/site";
@@ -40,7 +43,10 @@ export default function Home() {
         <Hero />
         <About />
         <Spaces />
+        <Events />
         <PhotoGallery />
+        <Planning />
+        <FAQ />
         <MapAddress />
       </main>
       <Footer />

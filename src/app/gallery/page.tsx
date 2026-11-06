@@ -19,7 +19,7 @@ export default function GalleryPage() {
         <SubpageHero
           eyebrow="Gallery"
           title="A Glimpse Inside"
-          subtitle={`Design placeholders stand in below until real photos of ${SITE.name} are added. See current photos on our Facebook page.`}
+          subtitle={`Real views of ${SITE.name} today and the room’s Sullivan’s Black Forest history.`}
         />
         <PhotoGallery />
         <MapAddress />

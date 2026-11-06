@@ -6,12 +6,8 @@ export default function MapAddress() {
     <section id="contact" className="py-28 bg-warm-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-14">
-          <span className="inline-block text-xs font-bold tracking-[0.25em] uppercase text-gold-dark mb-3">
-            Visit Us
-          </span>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-text-dark leading-snug">
-            Come See <em className="text-brown-light italic">The Schäffler</em>
-          </h2>
+          <p className="eyebrow">Visit Us</p>
+          <h2 className="section-title">Come see <em>The Schäffler.</em></h2>
         </div>
 
         <div className="grid lg:grid-cols-[1fr_1.2fr] gap-10 items-stretch">

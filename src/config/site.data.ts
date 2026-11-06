@@ -8,9 +8,9 @@ export const SITE_DATA = {
   name: "The Schäffler",
   // Short name for the PWA manifest / home-screen icon.
   shortName: "The Schäffler",
-  tagline: "An Elegant Wedding & Event Venue in Frankenmuth, Michigan",
+  tagline: "A Storied Frankenmuth Venue, Reimagined",
   description:
-    "The Schäffler is a wedding and event venue in Frankenmuth, Michigan — the reintroduction of the venue long known as Sullivan's Black Forest. Reach out to check availability and request pricing for your wedding day, reception, or private event.",
+    "The Schäffler is a wedding and event venue in Frankenmuth, Michigan — a new chapter for the gathering place long known as Sullivan's Black Forest. Explore the space, discover its story, and request a private tour for your celebration.",
   shortDescription:
     "A wedding and event venue in Frankenmuth, Michigan, formerly known as Sullivan's Black Forest.",
   url: "https://schaffler-frankenmuth.elijahdesent.com",

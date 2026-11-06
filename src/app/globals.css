@@ -27,6 +27,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+  overflow-x: clip;
 }
 
 body {
@@ -34,6 +35,83 @@ body {
   color: var(--color-text-body);
   background-color: var(--color-warm-white);
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+::selection {
+  color: var(--color-warm-white);
+  background: var(--color-burgundy);
+}
+
+.eyebrow {
+  margin-bottom: 0.75rem;
+  color: var(--color-gold-dark);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  color: var(--color-text-dark);
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+}
+
+.section-title em {
+  color: var(--color-brown-light);
+  font-weight: 500;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(143, 109, 53, 0.45);
+  color: var(--color-brown-light);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: color 200ms ease, border-color 200ms ease;
+}
+
+.text-link:hover {
+  color: var(--color-burgundy);
+  border-color: var(--color-burgundy);
+}
+
+.text-link span {
+  font-size: 1.1rem;
+  transition: transform 200ms ease;
+}
+
+.text-link:hover span { transform: translateX(0.25rem); }
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 1.75rem;
+  border-radius: 9999px;
+  background: var(--color-brown-deep);
+  color: var(--color-warm-white);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: transform 200ms ease, background 200ms ease, box-shadow 200ms ease;
+}
+
+.primary-button:hover {
+  transform: translateY(-2px);
+  background: var(--color-burgundy);
+  box-shadow: 0 18px 35px rgba(43, 36, 32, 0.18);
 }
 
 /* Scroll animation utility classes */
@@ -88,8 +166,7 @@ body {
   100% { background-position: -200% 0; }
 }
 
-/* Soft warm bokeh — used in place of photography on the hero and dark
-   sections, evoking string lights without depicting the venue itself. */
+/* Soft warm bokeh for dark supporting surfaces. */
 .bokeh-glow {
   background-image:
     radial-gradient(circle at 12% 20%, rgba(217, 187, 132, 0.55) 0, rgba(217, 187, 132, 0) 3%),
