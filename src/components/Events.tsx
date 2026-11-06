@@ -1,4 +1,5 @@
 import AnimateOnScroll from "./AnimateOnScroll";
+import Image from "next/image";
 
 const events = [
   { number: "01", title: "Wedding Receptions", copy: "Dinner, toasts, first dances, and a full evening together in a room designed to feel special before the first centerpiece is placed." },
@@ -19,9 +20,20 @@ export default function Events() {
               <p className="mt-6 text-white/70 leading-7 max-w-md">
                 The Schäffler is being introduced first as a wedding venue, but its story has always been about bringing people together.
               </p>
-              <a href="/reserve" className="inline-flex mt-8 border-b border-gold-light pb-2 text-xs font-bold tracking-[.18em] uppercase text-gold-light hover:text-white hover:border-white transition-colors">
-                Tell us what you&rsquo;re planning&nbsp; →
+              <a href="/reserve#availability" className="inline-flex mt-8 border-b border-gold-light pb-2 text-xs font-bold tracking-[.18em] uppercase text-gold-light hover:text-white hover:border-white transition-colors">
+                Check your date&nbsp; →
               </a>
+              <div className="relative mt-10 aspect-[4/3] overflow-hidden rounded-2xl border border-white/15 shadow-2xl">
+                <Image
+                  src="/venue/wedding-dance-floor.jpg"
+                  alt="Wedding guests celebrating together on The Schäffler dance floor"
+                  fill
+                  sizes="(min-width: 1024px) 34vw, 90vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-burgundy/65 via-transparent to-transparent" />
+                <p className="absolute bottom-4 left-5 text-[10px] font-bold tracking-[.18em] uppercase text-white/80">A room made for celebrating</p>
+              </div>
             </div>
           </AnimateOnScroll>
 

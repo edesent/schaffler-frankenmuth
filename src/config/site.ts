@@ -12,13 +12,6 @@ export const SITE = SITE_DATA;
 
 const words = SITE.name.trim().split(/\s+/);
 
-/** Two-letter monogram, e.g. "The Schäffler" -> "TS". */
-export const brandInitials = words
-  .map((w) => w[0])
-  .slice(0, 2)
-  .join("")
-  .toUpperCase();
-
 /** First word of the name, for the stacked brand lockup. */
 export const brandTop = words[0];
 /** Remaining words of the name, for the stacked brand lockup. */
@@ -46,4 +39,4 @@ export const mapsUrl = `https://maps.google.com/?q=${encodeURIComponent(addressO
 export const mapsEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(addressOneLine)}&output=embed`;
 
 export const logoUrl = `${SITE.url.replace(/\/$/, "")}/logo.png`;
-export const ogImageUrl = "/venue/legacy-reception-hall.jpg";
+export const ogImageUrl = "/venue/grand-reception-room.jpg";

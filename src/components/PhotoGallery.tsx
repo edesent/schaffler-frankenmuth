@@ -3,11 +3,11 @@ import { SITE } from "@/config/site";
 import Image from "next/image";
 
 const tiles = [
-  { caption: "Timber & Draping", src: "/venue/legacy-reception-hall.jpg", position: "center", className: "md:col-span-2 md:row-span-2" },
-  { caption: "Reception Layout", src: "/venue/facebook-banquet-room.jpg", position: "center", className: "" },
+  { caption: "The Grand Reception Room", src: "/venue/grand-reception-room.jpg", position: "center", className: "md:col-span-2 md:row-span-2" },
+  { caption: "A Packed Dance Floor", src: "/venue/wedding-dance-floor.jpg", position: "center", className: "" },
+  { caption: "The Moments Between", src: "/venue/reception-candids.jpg", position: "60% center", className: "" },
   { caption: "Warm String Lights", src: "/venue/facebook-banquet-room.jpg", position: "center 24%", className: "" },
-  { caption: "The Grand Trusses", src: "/venue/legacy-reception-hall.jpg", position: "center 8%", className: "" },
-  { caption: "A Room Ready to Transform", src: "/venue/legacy-reception-hall.jpg", position: "center 72%", className: "md:col-span-2" },
+  { caption: "A Room Ready to Transform", src: "/venue/grand-reception-room.jpg", position: "center 68%", className: "md:col-span-2" },
 ];
 
 export default function PhotoGallery() {
@@ -21,8 +21,8 @@ export default function PhotoGallery() {
               A room with <em className="text-gold-light">presence.</em>
             </h2>
             <p className="text-white/65 mt-4 max-w-2xl mx-auto leading-relaxed">
-              Real views of the venue as it begins its next chapter—from the current
-              Facebook introduction and the hall&rsquo;s Sullivan&rsquo;s Black Forest history.
+              Real celebrations and real views of the venue—from its timber-framed
+              reception room to the dance floor and the candid moments guests remember.
             </p>
           </div>
         </AnimateOnScroll>

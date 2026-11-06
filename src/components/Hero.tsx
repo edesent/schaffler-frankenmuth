@@ -5,8 +5,8 @@ export default function Hero() {
   return (
     <header id="home" className="relative min-h-[100svh] overflow-hidden bg-brown-deep">
       <Image
-        src="/venue/legacy-reception-hall.jpg"
-        alt="Timber reception hall dressed for a wedding at the venue formerly known as Sullivan's Black Forest"
+        src="/venue/grand-reception-room.jpg"
+        alt="The Schäffler reception room with exposed timber beams, chandeliers, string lights, and wedding tables"
         fill
         priority
         sizes="100vw"
@@ -36,17 +36,17 @@ export default function Hero() {
 
           <div className="animate-fade-up animation-delay-600 flex flex-col sm:flex-row gap-4 mt-10">
           <a
-            href="/reserve"
+            href="/reserve#availability"
             className="group inline-flex items-center justify-center gap-3 bg-gold text-brown-deep font-bold text-xs tracking-[0.18em] uppercase px-8 py-4.5 rounded-full hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-xl transition-all"
           >
-            Request a Private Tour
+            Check Availability
             <span aria-hidden="true" className="text-lg transition-transform group-hover:translate-x-1">→</span>
           </a>
           <a
-            href="#gallery"
+            href="/gallery"
             className="inline-flex items-center justify-center border border-white/45 text-white font-bold text-xs tracking-[0.18em] uppercase px-8 py-4.5 rounded-full backdrop-blur-sm hover:bg-white hover:text-brown-deep hover:-translate-y-0.5 transition-all"
           >
-            Explore the Venue
+            View the Gallery
           </a>
         </div>
 
@@ -65,7 +65,7 @@ export default function Hero() {
       </div>
 
       <p className="absolute bottom-5 right-6 z-10 text-[9px] uppercase tracking-[0.14em] text-white/45">
-        Historic venue image · Sara Hollebourn Photography
+        Photo courtesy of The Schäffler
       </p>
     </header>
   );

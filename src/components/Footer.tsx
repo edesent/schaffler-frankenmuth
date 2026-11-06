@@ -1,11 +1,11 @@
-import { SITE, brandInitials, brandTop, brandBottom, phoneTel } from "@/config/site";
+import { SITE, brandTop, brandBottom, phoneTel } from "@/config/site";
 
 const quickLinks = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "Our Story" },
   { href: "#spaces", label: "The Venue" },
   { href: "/gallery", label: "Gallery" },
-  { href: "/reserve", label: "Check Availability" },
+  { href: "/reserve#availability", label: "Check Availability" },
 ];
 
 const hours = [
@@ -20,11 +20,9 @@ export default function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-white/[.08]">
           {/* Brand */}
           <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
-            <div className="w-14 h-14 rounded-full bg-gold flex items-center justify-center text-brown-deep font-bold font-serif text-xl shadow-md mb-4">
-              {brandInitials}
-            </div>
-            <p className="font-serif text-lg text-white mb-2 leading-tight">
-              {brandTop}<br />{brandBottom}
+            <p className="font-serif text-2xl italic text-gold-light mb-4 leading-tight border-l border-gold/60 pl-4">
+              <span className="text-[11px] not-italic uppercase tracking-[.2em] text-white/55 mr-2">{brandTop}</span>
+              {brandBottom}
             </p>
             <p className="text-sm leading-relaxed">
               {SITE.address.street}<br />

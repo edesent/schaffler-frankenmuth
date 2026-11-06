@@ -50,8 +50,8 @@ export default function Spaces() {
         <AnimateOnScroll delay={100}>
           <div className="relative aspect-[16/8] min-h-[420px] overflow-hidden rounded-[2rem] shadow-2xl mb-10">
             <Image
-              src="/venue/legacy-reception-hall.jpg"
-              alt="Historic reception hall with exposed timber beams, chandeliers, and white draping"
+              src="/venue/grand-reception-room.jpg"
+              alt="The Schäffler reception room with exposed timber beams, warm lanterns, string lights, and white draping"
               fill
               sizes="(min-width: 1280px) 1152px, 95vw"
               className="object-cover"
@@ -60,9 +60,9 @@ export default function Spaces() {
             <div className="absolute bottom-0 left-0 right-0 p-7 md:p-10 flex flex-col md:flex-row md:items-end md:justify-between gap-4 text-white">
               <div>
                 <p className="text-[10px] font-bold tracking-[.24em] uppercase text-gold-light mb-2">The signature room</p>
-                <h3 className="font-serif text-3xl md:text-5xl">Warm wood. Soft light. Grand scale.</h3>
+                <h3 className="font-serif text-2xl sm:text-3xl md:text-5xl leading-tight max-w-[17rem] sm:max-w-none">Warm wood. Soft light. Grand scale.</h3>
               </div>
-              <p className="text-xs text-white/65 md:text-right">Historic venue image<br/>Sara Hollebourn Photography</p>
+              <p className="text-xs text-white/65 md:text-right">A real view of the room<br/>Courtesy of The Schäffler</p>
             </div>
           </div>
         </AnimateOnScroll>

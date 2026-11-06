@@ -54,7 +54,7 @@ export default function Planning() {
                   </li>
                 ))}
               </ul>
-              <a href="/reserve" className="primary-button mt-9 w-full">Request your tour <span>→</span></a>
+              <a href="/reserve#availability" className="primary-button mt-9 w-full">Check availability <span>→</span></a>
             </aside>
           </AnimateOnScroll>
         </div>

@@ -33,7 +33,10 @@ npm start       # serve the build
   demo views back to the CRM. Both should be removed if this site goes live
   on its own domain.
 - `/reserve` routes visitors to the venue's public phone number and Facebook
-  page while the venue chooses a permanent inquiry inbox.
-- Gallery imagery uses the venue's current Facebook introduction and a credited
-  historic Sullivan's Black Forest image. Expand it when the owner supplies a
-  complete current photo library.
+  page while the venue chooses a permanent inquiry inbox. It is also ready for
+  a dedicated public Google Calendar: set
+  `NEXT_PUBLIC_GOOGLE_CALENDAR_EMBED_URL` to the calendar's public embed URL in
+  the hosting environment. Use a separate venue calendar that shows only
+  availability; never expose a personal calendar or private event details.
+- Gallery imagery uses current venue-supplied event photography and the venue's
+  Facebook introduction.

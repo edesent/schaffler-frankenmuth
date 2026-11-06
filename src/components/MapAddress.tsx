@@ -70,7 +70,7 @@ export default function MapAddress() {
                   Get Directions
                 </a>
                 <a
-                  href="/reserve"
+                  href="/reserve#availability"
                   className="inline-block text-center bg-gold text-brown-deep font-semibold text-sm tracking-wide uppercase px-8 py-3.5 rounded-full hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-lg transition-all"
                 >
                   Check Availability

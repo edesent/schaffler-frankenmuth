@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { brandInitials } from "@/config/site";
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -56,14 +55,11 @@ export default function Navbar() {
         <a
           href="#home"
           onClick={(e) => handleLinkClick(e, "#home")}
-          className="flex items-center gap-3 text-white"
+          className="flex items-center text-white"
         >
-          <div className="w-10 h-10 rounded-full border border-gold/70 flex items-center justify-center text-gold-light font-bold font-serif text-sm shadow-sm">
-            {brandInitials}
-          </div>
-          <div className="flex items-baseline gap-1 leading-tight whitespace-nowrap">
+          <div className="flex items-baseline gap-1.5 leading-tight whitespace-nowrap border-l border-gold/70 pl-4">
             <span className="text-[11px] tracking-[0.24em] uppercase text-white/70">The</span>
-            <span className="font-serif italic text-xl sm:text-2xl text-gold-light">Schäffler</span>
+            <span className="font-serif italic text-2xl sm:text-[1.7rem] text-gold-light">Schäffler</span>
           </div>
         </a>
 
@@ -82,7 +78,7 @@ export default function Navbar() {
           ))}
           <li className="ml-2">
             <a
-              href="/reserve"
+              href="/reserve#availability"
               className="bg-gold text-brown-deep text-[11px] font-bold tracking-[.1em] uppercase px-6 py-3 rounded-full hover:bg-gold-light hover:-translate-y-0.5 transition-all"
             >
               Check Availability
@@ -133,7 +129,7 @@ export default function Navbar() {
             ))}
             <li className="mt-4">
               <a
-                href="/reserve"
+                href="/reserve#availability"
                 className="block text-center bg-gold text-brown-deep font-semibold px-6 py-3 rounded-full hover:bg-gold-light transition-all"
               >
                 Check Availability

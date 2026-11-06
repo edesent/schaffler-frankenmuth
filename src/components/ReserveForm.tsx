@@ -10,18 +10,50 @@ const ready = [
 ];
 
 export default function ReserveForm() {
+  const calendarEmbedUrl = process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_EMBED_URL?.trim();
+
   return (
-    <section className="py-28 lg:py-36 bg-cream">
+    <section id="availability" className="py-28 lg:py-36 bg-cream scroll-mt-24">
       <div className="max-w-6xl mx-auto px-6">
+        <AnimateOnScroll>
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <p className="eyebrow">Check Availability</p>
+            <h2 className="section-title">Start with <em>your date.</em></h2>
+            <p className="mt-5 text-lg text-text-body leading-8">
+              {calendarEmbedUrl
+                ? "Browse the venue calendar below, then reach out to confirm your date and schedule a private walk-through."
+                : "Call or message The Schäffler to check your preferred date and schedule a private walk-through."}
+            </p>
+          </div>
+        </AnimateOnScroll>
+
+        {calendarEmbedUrl && (
+          <AnimateOnScroll delay={80}>
+            <div className="mb-14 rounded-[2rem] overflow-hidden border border-cream-dark bg-warm-white shadow-xl">
+              <div className="px-6 py-4 bg-brown-deep text-white flex items-center justify-between gap-4">
+                <p className="font-serif text-xl">Venue Calendar</p>
+                <span className="text-[10px] font-bold tracking-[.18em] uppercase text-gold-light">Dates shown are subject to confirmation</span>
+              </div>
+              <iframe
+                title="The Schäffler availability calendar"
+                src={calendarEmbedUrl}
+                loading="lazy"
+                className="w-full h-[620px] border-0 bg-white"
+              />
+            </div>
+          </AnimateOnScroll>
+        )}
+
         <div className="grid lg:grid-cols-[1.05fr_.95fr] gap-12 lg:gap-20 items-start">
           <AnimateOnScroll>
             <div>
-              <p className="eyebrow">Begin the Conversation</p>
+              <p className="eyebrow">Confirm Your Date</p>
               <h2 className="section-title">Your date deserves a <em>closer look.</em></h2>
               <p className="mt-7 text-lg text-text-body leading-8 max-w-2xl">
                 A private walk-through is the best way to experience the scale,
                 warmth, and possibilities of The Schäffler. Call or message the
-                venue to ask about available tour times and current pricing.
+                venue to confirm availability, ask about current pricing, and choose
+                a tour time.
               </p>
 
               <div className="grid sm:grid-cols-2 gap-4 mt-10">

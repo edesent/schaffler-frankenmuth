@@ -13,11 +13,11 @@ export default function About() {
             <div className="relative max-w-xl mx-auto lg:mx-0">
               <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-2xl">
                 <Image
-                  src="/venue/facebook-banquet-room.jpg"
-                  alt="The Schäffler banquet room with warm timber beams and string lights"
+                  src="/venue/reception-candids.jpg"
+                  alt="Young wedding guests smiling together during a celebration at The Schäffler"
                   fill
                   sizes="(min-width: 1024px) 42vw, 90vw"
-                  className="object-cover scale-110"
+                  className="object-cover object-[58%_center]"
                 />
               </div>
               <div className="absolute -bottom-8 -right-4 sm:-right-10 max-w-[250px] bg-burgundy text-white p-6 rounded-2xl shadow-xl">
@@ -63,7 +63,7 @@ export default function About() {
                   Frankenmuth&rsquo;s tradition of welcoming people well.
                 </p>
               </div>
-              <a href="/reserve" className="text-link mt-8">Plan a walk-through <span>→</span></a>
+              <a href="/reserve#availability" className="text-link mt-8">Check availability <span>→</span></a>
             </AnimateOnScroll>
           </div>
         </div>

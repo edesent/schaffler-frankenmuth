@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import { SITE } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Reserve Your Date",
+  title: "Check Availability",
   description: `Request pricing and check availability for your wedding or event at ${SITE.name} in Frankenmuth, Michigan.`,
 };
 
@@ -17,9 +17,9 @@ export default function ReservePage() {
       <Navbar />
       <main>
         <SubpageHero
-          eyebrow="Reserve Your Date"
-          title="Check Availability & Pricing"
-          subtitle="We don't publish flat pricing because every wedding is different. Send us a few details and we'll follow up with availability and pricing for your date."
+          eyebrow="Your Celebration Starts Here"
+          title="Check Your Date"
+          subtitle="Browse the venue calendar when available, then connect directly with The Schäffler to confirm your date, current pricing, and a private tour."
         />
         <ReserveForm />
         <MapAddress />

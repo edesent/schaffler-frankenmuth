@@ -54,9 +54,9 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     images: [
       {
-        url: "/venue/legacy-reception-hall.jpg",
-        width: 2000,
-        height: 1333,
+        url: "/venue/grand-reception-room.jpg",
+        width: 1200,
+        height: 800,
         alt: `${SITE_NAME} — wedding and event venue in Frankenmuth, Michigan`,
       },
     ],
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${SITE_NAME} — ${SITE_TAGLINE}`,
     description: SITE_DESCRIPTION,
-    images: ["/venue/legacy-reception-hall.jpg"],
+    images: ["/venue/grand-reception-room.jpg"],
   },
   // Demo site — keep out of search results until this is handed off and
   // relaunched on its own domain.
