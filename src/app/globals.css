@@ -4,22 +4,24 @@
   --font-sans: var(--font-lato);
   --font-serif: var(--font-playfair);
 
-  /* Warm Color Palette — generic Independent KJV Baptist theme */
-  --color-gold: #d4af55;
-  --color-gold-light: #e8cf8a;
-  --color-gold-dark: #b8942e;
-  --color-cream: #faf6ef;
-  --color-cream-dark: #f0e8d8;
-  --color-warm-white: #fefcf8;
-  --color-brown-deep: #2c1810;
-  --color-brown: #4a2c1a;
-  --color-brown-light: #6b4226;
-  --color-burgundy: #6b2d3e;
-  --color-burgundy-dark: #4a1e2b;
-  --color-text-dark: #2d2017;
+  /* Elegant wedding-venue palette — warm neutrals, antique gold, deep wine */
+  --color-gold: #b9924f;
+  --color-gold-light: #d9bb84;
+  --color-gold-dark: #8f6d35;
+  --color-cream: #f7f1e6;
+  --color-cream-dark: #ece1cc;
+  --color-warm-white: #fffbf4;
+  --color-brown-deep: #2b2420;
+  --color-brown: #46362b;
+  --color-brown-light: #6e5440;
+  --color-burgundy: #6e2f3a;
+  --color-burgundy-dark: #4a1f27;
+  --color-sage: #6f7a5d;
+  --color-sage-dark: #525a44;
+  --color-text-dark: #2a2420;
   --color-text-body: #4a3f35;
   --color-text-light: #7a6e62;
-  --color-text-muted: #9e9488;
+  --color-text-muted: #a89b8c;
 }
 
 html {
@@ -84,4 +86,18 @@ body {
 @keyframes shimmer {
   0% { background-position: 200% 0; }
   100% { background-position: -200% 0; }
+}
+
+/* Soft warm bokeh — used in place of photography on the hero and dark
+   sections, evoking string lights without depicting the venue itself. */
+.bokeh-glow {
+  background-image:
+    radial-gradient(circle at 12% 20%, rgba(217, 187, 132, 0.55) 0, rgba(217, 187, 132, 0) 3%),
+    radial-gradient(circle at 28% 68%, rgba(217, 187, 132, 0.4) 0, rgba(217, 187, 132, 0) 2.6%),
+    radial-gradient(circle at 46% 30%, rgba(217, 187, 132, 0.5) 0, rgba(217, 187, 132, 0) 2.4%),
+    radial-gradient(circle at 64% 76%, rgba(217, 187, 132, 0.45) 0, rgba(217, 187, 132, 0) 3%),
+    radial-gradient(circle at 80% 22%, rgba(217, 187, 132, 0.55) 0, rgba(217, 187, 132, 0) 2.8%),
+    radial-gradient(circle at 92% 58%, rgba(217, 187, 132, 0.4) 0, rgba(217, 187, 132, 0) 2.4%),
+    radial-gradient(circle at 8% 88%, rgba(217, 187, 132, 0.35) 0, rgba(217, 187, 132, 0) 2.2%),
+    radial-gradient(circle at 58% 10%, rgba(217, 187, 132, 0.4) 0, rgba(217, 187, 132, 0) 2.2%);
 }

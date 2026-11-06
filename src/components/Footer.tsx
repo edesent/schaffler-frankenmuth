@@ -2,20 +2,15 @@ import { SITE, brandInitials, brandTop, brandBottom, phoneTel } from "@/config/s
 
 const quickLinks = [
   { href: "#home", label: "Home" },
-  { href: "#about", label: "About Us" },
-  { href: "#services", label: "Service Times" },
-  { href: "#ministries", label: "Ministries" },
-  { href: "/messages", label: "Messages" },
-  { href: "/give", label: "Give Online" },
-  { href: "/statement-of-faith", label: "Statement of Faith" },
-  { href: "/plan-of-salvation", label: "Plan of Salvation" },
+  { href: "#about", label: "Our Story" },
+  { href: "#spaces", label: "The Venue" },
+  { href: "/gallery", label: "Gallery" },
+  { href: "/reserve", label: "Check Availability" },
 ];
 
-const serviceTimes = [
-  { label: "Sunday School", time: "9:30 AM" },
-  { label: "Morning Worship", time: "10:30 AM" },
-  { label: "Sunday Evening", time: "6:00 PM" },
-  { label: "Wednesday Bible Study", time: "7:00 PM" },
+const hours = [
+  { label: "Tours & Inquiries", time: "By appointment" },
+  { label: "Private Events", time: "Year-round" },
 ];
 
 export default function Footer() {
@@ -54,11 +49,11 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Service Times */}
+          {/* Hours */}
           <div className="text-center sm:text-left">
-            <h4 className="font-serif text-base font-semibold text-white mb-5">Service Times</h4>
+            <h4 className="font-serif text-base font-semibold text-white mb-5">Hours</h4>
             <ul className="space-y-2.5">
-              {serviceTimes.map((s) => (
+              {hours.map((s) => (
                 <li key={s.label} className="text-sm text-white/60">
                   <strong className="text-white/85 font-semibold">{s.label}</strong> — {s.time}
                 </li>
@@ -81,21 +76,9 @@ export default function Footer() {
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                 </svg>
               </a>
-              <a
-                href={SITE.youtubeUrl || "#"}
-                aria-label="YouTube"
-                target={SITE.youtubeUrl ? "_blank" : undefined}
-                rel={SITE.youtubeUrl ? "noopener noreferrer" : undefined}
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/[.08] text-white/70 hover:bg-gold hover:text-brown-deep hover:-translate-y-0.5 transition-all"
-              >
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                  <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43zM9.75 15.02V8.48l5.75 3.27-5.75 3.27z" />
-                </svg>
-              </a>
             </div>
             <p className="text-sm italic text-white/40 leading-relaxed">
-              &ldquo;Preach the word; be instant in season, out of season.&rdquo;<br />
-              <em className="not-italic text-white/30">— 2 Timothy 4:2 (KJV)</em>
+              Formerly {SITE.formerName} — reintroduced as {SITE.name}.
             </p>
           </div>
         </div>

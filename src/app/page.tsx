@@ -1,40 +1,22 @@
 import Navbar from "@/components/Navbar";
-import PreachingHero from "@/components/PreachingHero";
-import WatchLive from "@/components/WatchLive";
-import WelcomePastor from "@/components/WelcomePastor";
-import StaffStrip from "@/components/StaffStrip";
-import ScriptureBanner from "@/components/ScriptureBanner";
-import ServiceTimes from "@/components/ServiceTimes";
-import FirstTimeVisitor from "@/components/FirstTimeVisitor";
-import AboutMission from "@/components/AboutMission";
-import WhatWeBelieve from "@/components/WhatWeBelieve";
-import Testimonies from "@/components/Testimonies";
-import LatestSermon from "@/components/LatestSermon";
-import UpcomingEvents from "@/components/UpcomingEvents";
-import MinistriesPreview from "@/components/MinistriesPreview";
-import PlanOfSalvation from "@/components/PlanOfSalvation";
-import Missionaries from "@/components/Missionaries";
-import Give from "@/components/Give";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Spaces from "@/components/Spaces";
 import PhotoGallery from "@/components/PhotoGallery";
 import MapAddress from "@/components/MapAddress";
-import PrayerRequest from "@/components/PrayerRequest";
-import ChatPastor from "@/components/ChatPastor";
-import MobileFriendly from "@/components/MobileFriendly";
-import EditWithAI from "@/components/EditWithAI";
 import Footer from "@/components/Footer";
 import { SITE, logoUrl, ogImageUrl, phoneTel } from "@/config/site";
 
-const churchSchema = {
+const venueSchema = {
   "@context": "https://schema.org",
-  "@type": "Church",
+  "@type": "EventVenue",
   name: SITE.name,
-  alternateName: SITE.tagline,
+  alternateName: SITE.formerName,
   url: SITE.url,
   logo: logoUrl,
   image: `${SITE.url.replace(/\/$/, "")}${ogImageUrl}`,
   description: SITE.description,
   telephone: phoneTel,
-  email: SITE.email,
   address: {
     "@type": "PostalAddress",
     streetAddress: SITE.address.street,
@@ -43,20 +25,7 @@ const churchSchema = {
     postalCode: SITE.address.zip,
     addressCountry: "US",
   },
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Sunday",
-      opens: "09:30",
-      closes: "19:30",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Wednesday",
-      opens: "19:00",
-      closes: "20:30",
-    },
-  ],
+  sameAs: [SITE.facebookUrl].filter(Boolean),
 };
 
 export default function Home() {
@@ -64,32 +33,15 @@ export default function Home() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(churchSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(venueSchema) }}
       />
       <Navbar />
       <main>
-        <PreachingHero />
-        <WatchLive />
-        <WelcomePastor />
-        <StaffStrip />
-        <ScriptureBanner />
-        <ServiceTimes />
-        <FirstTimeVisitor />
-        <AboutMission />
-        <WhatWeBelieve />
-        <Testimonies />
-        <LatestSermon />
-        <UpcomingEvents />
-        <MinistriesPreview />
-        <PlanOfSalvation />
-        <Missionaries />
-        <Give />
+        <Hero />
+        <About />
+        <Spaces />
         <PhotoGallery />
         <MapAddress />
-        <PrayerRequest />
-        <ChatPastor />
-        <MobileFriendly />
-        <EditWithAI />
       </main>
       <Footer />
     </>

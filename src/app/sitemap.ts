@@ -14,40 +14,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
-      url: `${SITE_URL}/pastor`,
+      url: `${SITE_URL}/gallery`,
       lastModified,
       changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${SITE_URL}/statement-of-faith`,
-      lastModified,
-      changeFrequency: "yearly",
       priority: 0.7,
     },
     {
-      url: `${SITE_URL}/messages`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${SITE_URL}/give`,
-      lastModified,
-      changeFrequency: "yearly",
-      priority: 0.6,
-    },
-    {
-      url: `${SITE_URL}/missionaries`,
+      url: `${SITE_URL}/reserve`,
       lastModified,
       changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${SITE_URL}/plan-of-salvation`,
-      lastModified,
-      changeFrequency: "yearly",
-      priority: 0.8,
+      priority: 0.9,
     },
   ];
 }

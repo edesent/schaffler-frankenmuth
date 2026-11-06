@@ -30,16 +30,14 @@ export const metadata: Metadata = {
   description: SITE_DESCRIPTION,
   applicationName: SITE_NAME,
   keywords: [
-    "Independent Baptist church",
-    "KJV Baptist church",
-    "King James Bible church",
-    "Bible-believing church near me",
-    "Independent Fundamental Baptist",
-    "old-fashioned Baptist church",
-    "Sunday worship",
-    "Wednesday Bible study",
-    "expository preaching",
-    "Baptist church family",
+    "Frankenmuth wedding venue",
+    "The Schäffler Frankenmuth",
+    "Sullivan's Black Forest",
+    "Michigan wedding venue",
+    "Frankenmuth event venue",
+    "Frankenmuth banquet hall",
+    "wedding reception venue Michigan",
+    "Frankenmuth MI weddings",
   ],
   authors: [{ name: SITE_NAME }],
   creator: SITE_NAME,
@@ -59,7 +57,7 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: `${SITE_NAME} — exterior of our church building`,
+        alt: `${SITE_NAME} — wedding and event venue in Frankenmuth, Michigan`,
       },
     ],
   },
@@ -69,17 +67,9 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     images: ["/og-image.jpg"],
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
-  },
+  // Demo site — keep out of search results until this is handed off and
+  // relaunched on its own domain.
+  robots: { index: false, follow: false, googleBot: { index: false, follow: false } },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -88,7 +78,7 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
     shortcut: "/favicon.ico",
   },
-  manifest: "/site.webmanifest",
+  manifest: "/manifest.webmanifest",
   appleWebApp: {
     capable: true,
     title: SITE_NAME,
@@ -99,7 +89,7 @@ export const metadata: Metadata = {
     email: true,
     address: true,
   },
-  category: "religion",
+  category: "business",
 };
 
 export const viewport: Viewport = {

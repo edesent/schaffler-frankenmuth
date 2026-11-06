@@ -6,13 +6,9 @@ import { brandInitials, brandTop, brandBottom } from "@/config/site";
 
 const navLinks = [
   { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#services", label: "Services" },
-  { href: "#ministries", label: "Ministries" },
-  { href: "#events", label: "Events" },
-  { href: "/messages", label: "Messages" },
-  { href: "/give", label: "Give" },
-  { href: "/statement-of-faith", label: "Beliefs" },
+  { href: "#about", label: "Our Story" },
+  { href: "#spaces", label: "The Venue" },
+  { href: "/gallery", label: "Gallery" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -89,11 +85,10 @@ export default function Navbar() {
           ))}
           <li className="ml-2">
             <a
-              href="#contact"
-              onClick={(e) => handleLinkClick(e, "#contact")}
+              href="/reserve"
               className="bg-gold text-brown-deep text-sm font-semibold px-6 py-2.5 rounded-full hover:bg-gold-light hover:-translate-y-0.5 transition-all"
             >
-              Plan a Visit
+              Check Availability
             </a>
           </li>
         </ul>
@@ -141,11 +136,10 @@ export default function Navbar() {
             ))}
             <li className="mt-4">
               <a
-                href="#contact"
-                onClick={(e) => handleLinkClick(e, "#contact")}
+                href="/reserve"
                 className="block text-center bg-gold text-brown-deep font-semibold px-6 py-3 rounded-full hover:bg-gold-light transition-all"
               >
-                Plan a Visit
+                Check Availability
               </a>
             </li>
           </ul>

@@ -1,18 +1,10 @@
 import type { MetadataRoute } from "next";
-import { SITE } from "@/config/site";
 
-const SITE_URL = SITE.url;
-
+// Demo site — disallow everything so this preview/demo build is never indexed.
+// Remove this restriction only once the venue owns this build and it launches
+// on its own domain.
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: [
-      {
-        userAgent: "*",
-        allow: "/",
-        disallow: ["/api/", "/admin/"],
-      },
-    ],
-    sitemap: `${SITE_URL}/sitemap.xml`,
-    host: SITE_URL,
+    rules: [{ userAgent: "*", disallow: "/" }],
   };
 }

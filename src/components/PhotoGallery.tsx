@@ -1,38 +1,37 @@
 import AnimateOnScroll from "./AnimateOnScroll";
-import SectionBadge from "./SectionBadge";
+import { SITE } from "@/config/site";
 
-const photos = [
-  { caption: "Sunday Worship", tone: "from-brown-light to-brown-deep" },
-  { caption: "VBS Week", tone: "from-gold to-brown-light" },
-  { caption: "Fellowship Dinner", tone: "from-burgundy to-brown-deep" },
-  { caption: "Baptism Service", tone: "from-brown to-brown-deep" },
-  { caption: "Youth Camp", tone: "from-gold-dark to-brown" },
-  { caption: "Christmas Service", tone: "from-burgundy-dark to-brown-deep" },
+const tiles = [
+  { caption: "The Reception Hall", tone: "from-brown-light to-brown-deep" },
+  { caption: "Ceremony Setup", tone: "from-gold to-brown-light" },
+  { caption: "Evening String Lights", tone: "from-burgundy to-brown-deep" },
+  { caption: "Historic Charm", tone: "from-sage to-brown-deep" },
+  { caption: "Table & Decor", tone: "from-gold-dark to-brown" },
+  { caption: "Little Bavaria Grounds", tone: "from-burgundy-dark to-brown-deep" },
 ];
 
 export default function PhotoGallery() {
   return (
-    <section id="gallery" className="py-28 bg-warm-white">
+    <section id="gallery" className="py-28 bg-cream">
       <div className="max-w-7xl mx-auto px-6">
-        <SectionBadge
-          number={17}
-          name="Photo Gallery"
-          purpose="A glimpse into recent moments — services, events, the church family"
-        />
-
         <AnimateOnScroll>
-          <div className="text-center mb-14">
+          <div className="text-center mb-10">
+            <span className="inline-block text-xs font-bold tracking-[0.25em] uppercase text-gold-dark mb-3">
+              Gallery
+            </span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-text-dark leading-snug">
-              Moments From Our <em className="text-brown-light italic">Church Family</em>
+              A Glimpse of <em className="text-brown-light italic">The Schäffler</em>
             </h2>
             <p className="text-text-body mt-3 max-w-2xl mx-auto">
-              A few photos from the past few months.
+              This demo site is standing in with design placeholders until
+              real venue photos are added. See current photos of the space on
+              our Facebook page.
             </p>
           </div>
         </AnimateOnScroll>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-          {photos.map((p, i) => (
+          {tiles.map((p, i) => (
             <AnimateOnScroll key={p.caption} delay={i * 60}>
               <figure
                 className={`relative aspect-[4/3] rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all bg-gradient-to-br ${p.tone}`}
@@ -47,6 +46,21 @@ export default function PhotoGallery() {
             </AnimateOnScroll>
           ))}
         </div>
+
+        {SITE.facebookUrl && (
+          <AnimateOnScroll delay={350}>
+            <div className="text-center mt-10">
+              <a
+                href={SITE.facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block border-2 border-brown-light text-brown-light font-semibold text-sm tracking-wide uppercase px-8 py-3.5 rounded-full hover:bg-brown-light hover:text-white hover:-translate-y-0.5 transition-all"
+              >
+                See Real Photos on Facebook
+              </a>
+            </div>
+          </AnimateOnScroll>
+        )}
       </div>
     </section>
   );

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="35%" r="75%">
+      <stop offset="0%" stop-color="#3a2f27"/>
+      <stop offset="100%" stop-color="#201a16"/>
+    </radialGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.2"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- bokeh string lights -->
+  <g fill="#e3c384" filter="url(#soft)">
+    <circle cx="90" cy="90" r="5" opacity="0.85"/>
+    <circle cx="170" cy="60" r="3.5" opacity="0.6"/>
+    <circle cx="260" cy="110" r="4.5" opacity="0.75"/>
+    <circle cx="1060" cy="520" r="5" opacity="0.8"/>
+    <circle cx="980" cy="560" r="3.5" opacity="0.55"/>
+    <circle cx="1120" cy="470" r="4" opacity="0.65"/>
+    <circle cx="140" cy="540" r="4" opacity="0.6"/>
+    <circle cx="60" cy="480" r="3" opacity="0.5"/>
+    <circle cx="1100" cy="120" r="4" opacity="0.6"/>
+    <circle cx="1040" cy="70" r="3" opacity="0.5"/>
+  </g>
+
+  <!-- ornamental frame -->
+  <rect x="48" y="48" width="1104" height="534" fill="none" stroke="#b9924f" stroke-width="1.5" opacity="0.55"/>
+
+  <!-- monogram ring -->
+  <circle cx="600" cy="205" r="46" fill="none" stroke="#b9924f" stroke-width="1.5"/>
+  <text x="600" y="222" text-anchor="middle" font-family="Georgia, 'Playfair Display', serif" font-size="46" fill="#e3c384">S</text>
+
+  <text x="600" y="330" text-anchor="middle" font-family="Georgia, 'Playfair Display', serif" font-size="72" fill="#fffbf4" font-style="italic">The Sch&#228;ffler</text>
+  <text x="600" y="382" text-anchor="middle" font-family="Georgia, serif" font-size="22" letter-spacing="6" fill="#d9bb84">FRANKENMUTH, MICHIGAN</text>
+
+  <line x1="520" y1="420" x2="680" y2="420" stroke="#b9924f" stroke-width="1.5"/>
+
+  <text x="600" y="462" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#cfc3b2">A Wedding &amp; Event Venue</text>
+</svg>

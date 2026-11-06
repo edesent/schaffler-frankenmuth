@@ -1,27 +1,22 @@
 import AnimateOnScroll from "./AnimateOnScroll";
-import SectionBadge from "./SectionBadge";
-import { SITE, phoneTel, mapsUrl } from "@/config/site";
+import { SITE, phoneTel, mapsUrl, mapsEmbedUrl } from "@/config/site";
 
 export default function MapAddress() {
   return (
-    <section id="contact" className="py-28 bg-cream">
+    <section id="contact" className="py-28 bg-warm-white">
       <div className="max-w-7xl mx-auto px-6">
-        <SectionBadge
-          number={18}
-          name="Where to Find Us"
-          purpose="Address, embedded map, phone, and directions"
-        />
+        <div className="text-center mb-14">
+          <span className="inline-block text-xs font-bold tracking-[0.25em] uppercase text-gold-dark mb-3">
+            Visit Us
+          </span>
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-text-dark leading-snug">
+            Come See <em className="text-brown-light italic">The Schäffler</em>
+          </h2>
+        </div>
 
         <div className="grid lg:grid-cols-[1fr_1.2fr] gap-10 items-stretch">
           <AnimateOnScroll>
-            <div className="h-full p-8 md:p-10 bg-warm-white rounded-2xl border border-cream-dark shadow-sm flex flex-col">
-              <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-gold-dark mb-3">
-                Visit Us
-              </span>
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-text-dark leading-snug mb-6">
-                Come Worship <em className="text-brown-light italic">With Us</em>
-              </h2>
-
+            <div className="h-full p-8 md:p-10 bg-cream rounded-2xl border border-cream-dark shadow-sm flex flex-col">
               <div className="space-y-5 mb-8 flex-grow">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-full bg-cream-dark flex items-center justify-center text-brown-light flex-shrink-0">
@@ -52,41 +47,51 @@ export default function MapAddress() {
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-full bg-cream-dark flex items-center justify-center text-brown-light flex-shrink-0">
                     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                     </svg>
                   </div>
                   <div>
-                    <p className="text-xs font-bold tracking-[0.15em] uppercase text-text-light mb-0.5">Email</p>
-                    <a href={`mailto:${SITE.email}`} className="text-text-dark font-medium hover:text-brown-light transition-colors">
-                      {SITE.email}
+                    <p className="text-xs font-bold tracking-[0.15em] uppercase text-text-light mb-0.5">Facebook</p>
+                    <a
+                      href={SITE.facebookUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-text-dark font-medium hover:text-brown-light transition-colors"
+                    >
+                      The Schäffler on Facebook
                     </a>
                   </div>
                 </div>
               </div>
 
-              <a
-                href={mapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block self-start bg-brown-light text-white font-semibold text-sm tracking-wide uppercase px-8 py-3.5 rounded-full border-2 border-brown-light hover:bg-brown hover:border-brown hover:-translate-y-0.5 hover:shadow-lg transition-all"
-              >
-                Get Directions
-              </a>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href={mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block text-center bg-brown-light text-white font-semibold text-sm tracking-wide uppercase px-8 py-3.5 rounded-full border-2 border-brown-light hover:bg-brown hover:border-brown hover:-translate-y-0.5 hover:shadow-lg transition-all"
+                >
+                  Get Directions
+                </a>
+                <a
+                  href="/reserve"
+                  className="inline-block text-center bg-gold text-brown-deep font-semibold text-sm tracking-wide uppercase px-8 py-3.5 rounded-full hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-lg transition-all"
+                >
+                  Check Availability
+                </a>
+              </div>
             </div>
           </AnimateOnScroll>
 
           <AnimateOnScroll delay={200}>
             <div className="h-full min-h-[400px] rounded-2xl overflow-hidden shadow-sm border border-cream-dark relative bg-cream-dark">
-              <div className="absolute inset-0 iframe-shimmer" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-brown-light/70 p-8 text-center">
-                <svg className="w-16 h-16 mb-4 opacity-50" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z" />
-                </svg>
-                <p className="text-sm font-semibold tracking-[0.2em] uppercase">Embedded Map</p>
-                <p className="text-xs text-brown-light/50 mt-2 normal-case tracking-normal max-w-xs">
-                  Replace with a Google Maps iframe embed pointing to your actual address.
-                </p>
-              </div>
+              <iframe
+                title={`Map to ${SITE.name}`}
+                src={mapsEmbedUrl}
+                loading="lazy"
+                className="absolute inset-0 w-full h-full border-0"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </AnimateOnScroll>
         </div>

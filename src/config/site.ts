@@ -1,6 +1,6 @@
-// Central church configuration.
+// Central venue configuration.
 //
-// The church's data lives in ./site.data.ts (the one file the site builder
+// The venue's data lives in ./site.data.ts (the one file the site builder
 // rewrites). This module re-exports it as SITE and adds derived helpers used by
 // the components, layout metadata, sitemap, robots, and manifest.
 
@@ -12,7 +12,7 @@ export const SITE = SITE_DATA;
 
 const words = SITE.name.trim().split(/\s+/);
 
-/** Two-letter monogram, e.g. "Truth Baptist Church" -> "TB". */
+/** Two-letter monogram, e.g. "The Schäffler" -> "TS". */
 export const brandInitials = words
   .map((w) => w[0])
   .slice(0, 2)
@@ -24,21 +24,14 @@ export const brandTop = words[0];
 /** Remaining words of the name, for the stacked brand lockup. */
 export const brandBottom = words.slice(1).join(" ") || words[0];
 
-/** Pastor's last name, e.g. "Smith". */
-export const pastorLastName = SITE.pastorName.trim().split(/\s+/).slice(-1)[0];
-/** Full address line "Pastor John Smith". */
-export const pastorFullName = `${SITE.pastorTitle} ${SITE.pastorName}`.trim();
-/** Shorter "Pastor Smith". */
-export const pastorShortName = `${SITE.pastorTitle} ${pastorLastName}`.trim();
-
-/** Phone in tel: form, e.g. "(555) 555-0100" -> "+15555550100". */
+/** Phone in tel: form, e.g. "(810) 358-4251" -> "+18103584251". */
 export const phoneTel = (() => {
   const digits = SITE.phone.replace(/\D/g, "");
   if (!digits) return "";
   return digits.length === 10 ? `+1${digits}` : `+${digits}`;
 })();
 
-/** Single-line address, e.g. "123 Church Street, Anytown, ST 00000". */
+/** Single-line address, e.g. "281 Heinlein Strasse, Frankenmuth, MI 48734". */
 export const addressOneLine = [
   SITE.address.street,
   `${SITE.address.city}, ${SITE.address.state} ${SITE.address.zip}`.trim(),
@@ -46,8 +39,11 @@ export const addressOneLine = [
   .filter(Boolean)
   .join(", ");
 
-/** Google Maps directions link for the church address. */
+/** Google Maps directions link for the venue address. */
 export const mapsUrl = `https://maps.google.com/?q=${encodeURIComponent(addressOneLine)}`;
+
+/** Google Maps embed URL (no API key required) for the venue address. */
+export const mapsEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(addressOneLine)}&output=embed`;
 
 export const logoUrl = `${SITE.url.replace(/\/$/, "")}/logo.png`;
 export const ogImageUrl = "/og-image.jpg";
