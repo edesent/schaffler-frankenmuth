@@ -1,4 +1,5 @@
 import AnimateOnScroll from "./AnimateOnScroll";
+import VenueCalendar from "./VenueCalendar";
 import { SITE, phoneTel } from "@/config/site";
 
 const ready = [
