@@ -13,11 +13,11 @@ export default function About() {
             <div className="relative max-w-xl mx-auto lg:mx-0">
               <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-2xl">
                 <Image
-                  src="/venue/reception-candids.jpg"
-                  alt="Young wedding guests smiling together during a celebration at The Schäffler"
+                  src="/venue/our-story-dance.jpg"
+                  alt="Couples dancing during a celebration at The Schäffler"
                   fill
                   sizes="(min-width: 1024px) 42vw, 90vw"
-                  className="object-cover object-[58%_center]"
+                  className="object-cover object-center"
                 />
               </div>
               <div className="absolute -bottom-8 -right-4 sm:-right-10 max-w-[250px] bg-burgundy text-white p-6 rounded-2xl shadow-xl">
