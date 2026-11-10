@@ -57,7 +57,7 @@ export default function About() {
                   families celebrated, and evenings unfolded beneath warm wood beams.
                 </p>
                 <p>
-                  {SITE.name} honors that history while giving the venue a fresh identity.
+                  {SITE.name}{" "}honors that history while giving the venue a fresh identity.
                   The character remains unmistakable—the soaring timber structure,
                   layered reception room, soft lighting, and a setting rooted in
                   Frankenmuth&rsquo;s tradition of welcoming people well.
