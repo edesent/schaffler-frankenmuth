@@ -34,15 +34,12 @@ export default function ReserveForm() {
                 <p className="font-serif text-xl">Venue Calendar</p>
                 <span className="text-[10px] font-bold tracking-[.18em] uppercase text-gold-light">Dates shown are subject to confirmation</span>
               </div>
-              <div className="relative">
-                <iframe
-                  title="The Schäffler availability calendar"
-                  src={calendarEmbedUrl}
-                  loading="lazy"
-                  className="w-full h-[620px] border-0 bg-white pointer-events-none"
-                />
-                <div aria-hidden="true" className="absolute inset-0" />
-              </div>
+              <iframe
+                title="The Schäffler availability calendar"
+                src={calendarEmbedUrl}
+                loading="lazy"
+                className="w-full h-[620px] border-0 bg-white"
+              />
             </div>
           </AnimateOnScroll>
         )}
