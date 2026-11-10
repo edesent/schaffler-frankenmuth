@@ -30,8 +30,7 @@ export default function Hero() {
           </h1>
 
           <p className="animate-fade-up animation-delay-400 mt-10 text-lg md:text-2xl text-white/86 max-w-2xl leading-relaxed font-light">
-            {SITE.tagline}. The beloved venue once known as {SITE.formerName}
-            returns with a new name and the same unmistakable timber-framed character.
+            {SITE.tagline}. The beloved venue once known as {SITE.formerName} returns with a new name and the same unmistakable timber-framed character.
           </p>
 
           <div className="animate-fade-up animation-delay-600 flex flex-col sm:flex-row gap-4 mt-10">
